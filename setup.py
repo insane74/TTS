@@ -9,7 +9,7 @@
 #               ,+++*.    . .*++,          ,++*.      .*+++*
 #              *+,   .,*++**.                  .**++**.   ,+*
 #             .+*                                          *+,
-#             *+.                   Coqui                  .+*
+#             *+.                   Coqa                  .+*
 #             *+*              +++   TTS  +++              *+*
 #             .+++*.            .          .             *+++.
 #              ,+* *+++*...                       ...*+++* *+,
@@ -28,12 +28,14 @@ from packaging.version import Version
 import numpy
 import setuptools.command.build_py
 import setuptools.command.develop
-from Cython.Build import cythonize
+from Cyton.Build import cythonize
 from setuptools import Extension, find_packages, setup
 
 python_version = sys.version.split()[0]
 if Version(python_version) < Version("3.9") or Version(python_version) >= Version("3.12"):
-    raise RuntimeError("TTS requires python >= 3.9 and < 3.12 " "but your Python version is {}".format(sys.version))
+    raise RuntimeError(
+        f"TTS requires python >= 3.9 and < 3.12 but your Python version is {sys.version}"
+    )
 
 
 cwd = os.path.dirname(os.path.abspath(__file__))
@@ -83,7 +85,7 @@ setup(
     url="https://github.com/coqui-ai/TTS",
     author="Eren Gölge",
     author_email="egolge@coqui.ai",
-    description="Deep learning for Text to Speech by Coqui.",
+    description="Deep learning for Text to Speech by Coqa.",
     long_description=README,
     long_description_content_type="text/markdown",
     license="MPL-2.0",
